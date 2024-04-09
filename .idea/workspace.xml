@@ -5,38 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5a3bd3ce-1248-4794-ae78-07301b8e29dc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/app/BancoAppli.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/controlador/InicioControlador.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/controlador/PanelClienteControlador.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/controlador/controladorRegistro.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/controlador/loginControlador.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/controlador/transferirControlador.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/modelo/Banco.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/modelo/CuentaAhorros.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/modelo/Transaccion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/modelo/Usuario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/modelo/enums/CategoriaTransaccion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/modelo/enums/TipoTransaccion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Transferir.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/banco.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/bank.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/imagen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/lokk.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/panel.cerrarSecion.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/panel.consultar.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/panel.editarPerfil.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/panel.tranferir.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/inicio.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/login.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/panel.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/registro.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +42,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.BancoApp.executor": "Run",
+    "Maven.demo [org.openjfx:javafx-maven-plugin:0.0.8:run].executor": "Run",
     "Maven.notas [org.openjfx:javafx-maven-plugin:0.0.8:jlink].executor": "Run",
     "Maven.notas [org.openjfx:javafx-maven-plugin:0.0.8:run].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -81,7 +51,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/57313/Desktop/co.edu.uniquindio/Banco",
+    "last_opened_file_path": "C:/Users/57313/Desktop/co.edu.uniquindio/Banco - copia",
     "onboarding.tips.debug.path": "C:/Users/57313/Desktop/co.edu.uniquindio/Banco/src/main/java/org/example/Main.java",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
