@@ -94,12 +94,7 @@ public class EditarControlador {
        // stage.close();
    // }
 
-    public void Editar (ActionEvent e){
 
-        navegarVentana("/Crud.fxml", "Hola");
-        // holaaaa
-
-    }
 
 
 }

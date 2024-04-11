@@ -18,6 +18,8 @@ import java.util.ResourceBundle;
 public class PanelClienteControlador implements Initializable {
 
 
+
+    // este boton me dirije a la view de transferir
     public void transferencia (ActionEvent e){
 
         navegarVentana("/Transferir.fxml", "Banco - Tranferir Dinero");
@@ -83,10 +85,15 @@ public class PanelClienteControlador implements Initializable {
 
     }
 
-    public void Editar(ActionEvent event){
-        navegarVentana("/Crud.fxml", "Banco - Tranferir Dinero");
 
+    // este boton cuando le demos en editar me dijire a la viem del crud
+    public void Editar(ActionEvent event) {
+        navegarVentana("/Crud.fxml", "Hola");
     }
 
 
+    // metodo para consultar
+
+    public void Consultar(ActionEvent event) {
+    }
 }
