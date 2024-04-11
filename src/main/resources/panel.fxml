@@ -10,21 +10,26 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="center" prefHeight="400.0" prefWidth="400.0" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.banco.controlador.InicioControlador">
+<VBox alignment="center" prefHeight="277.0" prefWidth="461.0" spacing="50.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.banco.controlador.InicioControlador">
 
-   <Label text="Bienvenido a su banco de confianza">
-      <font>
-         <Font size="18.0" />
-      </font>
-   </Label>
-   <GridPane alignment="CENTER" hgap="10.0" vgap="10.0">
-      <Label text="Número de cuenta:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-      <TextField fx:id="txtNmrCuenta" minHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-      <Label text="Nombre:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-      <TextField fx:id="txtNombre" minHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+    <Label text="Bienvenido a su banco de confianza" textFill="#159e83">
+        <font>
+            <Font size="18.0" />
+        </font>
+    </Label>
 
+    <GridPane alignment="CENTER" hgap="10.0" vgap="10.0">
+        <Label text="Número de cuenta:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <TextField fx:id="txtNmrCuenta" minHeight="30.0" prefHeight="30.0" prefWidth="200.0" GridPane.columnIndex="1" />
+        <Label text="Nombre:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <TextField fx:id="txtNombre" minHeight="30.0" prefHeight="30.0" prefWidth="167.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
-   <HBox alignment="CENTER" spacing="20.0" />
+        <HBox alignment="CENTER" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Button minHeight="40.0" minWidth="80.0" onAction="#irRegistroCliente" prefHeight="40.0" prefWidth="88.0" style="-fx-background-color: #f5ff6f;" text="Cerrar sesion" textFill="#159e83" />
+            <Button minHeight="40.0" minWidth="74.0" onAction="#irRegistroCliente" prefHeight="40.0" prefWidth="88.0" style="-fx-background-color: #f5ff6f;" text="Consultar" textFill="#159e83" />
+            <Button minHeight="40.0" minWidth="75.0" onAction="#irRegistroCliente" prefHeight="40.0" prefWidth="89.0" style="-fx-background-color: #f5ff6f;" text="Editar perfil" textFill="#159e83" />
+        </HBox>
+         <Button minHeight="40.0" minWidth="74.0" onAction="#irIniciarSesion" prefHeight="40.0" prefWidth="88.0" style="-fx-background-color: #f5ff6f;" text="Transferir" textFill="#159e83" GridPane.rowIndex="2" />
       <columnConstraints>
          <ColumnConstraints />
          <ColumnConstraints />
@@ -32,12 +37,9 @@
       <rowConstraints>
          <RowConstraints />
          <RowConstraints />
+         <RowConstraints />
       </rowConstraints>
 
-   </GridPane>
-<Button minHeight="40.0" minWidth="130.0" onAction="#irIniciarSesion" style="-fx-background-color: #00807a; -fx-text-fill: white" text="Transferir" />
-<Button minHeight="40.0" minWidth="130.0" onAction="#irRegistroCliente" style="-fx-background-color: #00807a; -fx-text-fill: white" text="Cerrar sesion" />
-   <Button minHeight="40.0" minWidth="130.0" onAction="#irRegistroCliente" style="-fx-background-color: #00807a; -fx-text-fill: white" text="Consultar" />
-   <Button minHeight="40.0" minWidth="130.0" onAction="#irRegistroCliente" style="-fx-background-color: #00807a; -fx-text-fill: white" text="Editar perfil" />
+    </GridPane>
 
 </VBox>
