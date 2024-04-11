@@ -4,7 +4,8 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="center" prefHeight="277.0" prefWidth="461.0" spacing="50.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.banco.controlador.PanelClienteControlador">
+<VBox alignment="center" prefHeight="277.0" prefWidth="461.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.banco.controlador.PanelClienteControlador">
 
    <Label text="Bienvenido a su banco de confianza" textFill="#159e83">
       <font>
@@ -12,7 +13,7 @@
       </font>
    </Label>
 
-   <GridPane alignment="CENTER" hgap="10.0" vgap="10.0">
+   <GridPane alignment="CENTER" hgap="10" vgap="10.0">
       <Label text="Número de cuenta:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
       <TextField fx:id="txtNmrCuenta" minHeight="30.0" prefHeight="30.0" prefWidth="200.0" GridPane.columnIndex="1" />
       <Label text="Nombre:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
