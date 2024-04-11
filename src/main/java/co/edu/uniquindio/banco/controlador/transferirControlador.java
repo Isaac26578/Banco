@@ -16,9 +16,6 @@ import java.util.ResourceBundle;
 
 public class transferirControlador implements Initializable {
 
-    private float monto;
-
-
 
     @FXML
     private TextField txtNumeroCuenta;
@@ -26,7 +23,7 @@ public class transferirControlador implements Initializable {
     @FXML TextField txtNumeroCuentaDestino;
 
     @FXML
-    private TextField txtMontoTransferir;
+    private TextField txtCuenta;
 
     @FXML
     private ComboBox<String> txtCategoria;
@@ -38,8 +35,12 @@ public class transferirControlador implements Initializable {
 
         try {
 
-            banco.realizarTransferencia(txtNumeroCuenta.getText(), txtNumeroCuentaDestino.getText(), monto = Float.parseFloat(txtMontoTransferir.getText()), CategoriaTransaccion.valueOf(txtCategoria.getValue()));
-            txtNumeroCuenta.clear();
+
+
+
+            banco.realizarTransferencia(txtNumeroCuenta.getText(), txtNumeroCuentaDestino.getText(), Float.parseFloat(txtCuenta.getText()), CategoriaTransaccion.valueOf(txtCategoria.getValue()));
+
+            txtNumeroCuentaDestino.clear();
             txtNumeroCuentaDestino.clear();
             txtCategoria.setValue(null);
 

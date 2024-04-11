@@ -42,6 +42,17 @@
             <Font size="14.0" />
          </font></Label>
       <PasswordField fx:id="txtPassword" minHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <columnConstraints>
+         <ColumnConstraints />
+         <ColumnConstraints />
+      </columnConstraints>
+      <rowConstraints>
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+      </rowConstraints>
    </GridPane>
 
    <Button minHeight="40.0" minWidth="130.0" onAction="#registrarse" style="-fx-background-color: #f5ff6f;" text="Registrarse" textFill="#159e83">

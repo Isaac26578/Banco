@@ -285,6 +285,13 @@ public class Banco {
         return null;
     }
 
+
+    public String obtenerNumeroCedula(){
+
+
+        return "";
+    }
+
     /**
      * Método que obtiene una cuenta de ahorros de acuerdo a su número de cuenta
      * @param numeroCuenta número de cuenta
