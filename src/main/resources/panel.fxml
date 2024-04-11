@@ -10,7 +10,7 @@
       <Label layoutX="61.0" layoutY="115.0" text="Saldo: " />
       <Button fx:id="btbTransferir" layoutX="35.0" layoutY="160.0" mnemonicParsing="false" onAction="#transferencia" prefHeight="45.0" prefWidth="92.0" text="Tranferir" />
       <Button fx:id="btnCerrar" layoutX="141.0" layoutY="160.0" mnemonicParsing="false" onAction="#cerrar" prefHeight="45.0" prefWidth="92.0" text="Cerrar Sesion" />
-      <Button fx:id="btnCrud" layoutX="243.0" layoutY="160.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="92.0" text="Editar Perfil" />
+      <Button fx:id="btnCrud" layoutX="243.0" layoutY="160.0" mnemonicParsing="false" onAction="#Editar" prefHeight="45.0" prefWidth="92.0" text="Editar Perfil" />
       <Button layoutX="362.0" layoutY="160.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="92.0" text="Consultar" />
    </children>
 </AnchorPane>

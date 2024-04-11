@@ -4,27 +4,55 @@ import co.edu.uniquindio.banco.modelo.Banco;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import java.net.URL;
-import java.util.ResourceBundle;
+public class EditarControlador {
+    @FXML
+    private TextField txtNombre;
 
-public class PanelClienteControlador implements Initializable {
+    @FXML
+    private TextField txtDireccion;
+
+    @FXML
+    private TextField txtIdentificacion;
+
+    @FXML
+    private TextField txtCorreo;
+
+    @FXML
+    private PasswordField txtPassword;
+
+    // variable global
+    private final Banco banco = Banco.getInstancia();
 
 
-    public void transferencia (ActionEvent e){
+    // metodo para agregar usuarios
+    public void Actualizar(ActionEvent event){
+        try{
 
-        navegarVentana("/Transferir.fxml", "Banco - Tranferir Dinero");
+            banco.actualizarUsuario(txtNombre.getText(), txtDireccion.getText(), txtIdentificacion.getText(), txtCorreo.getText(), txtPassword.getText());
+
+
+            mostrarAlerta("Datos Actualizados correctamente", Alert.AlertType.INFORMATION);
+
+
+            //cerrarVentana();
+
+        }catch (Exception e)
+        {
+            mostrarAlerta(e.getMessage(), Alert.AlertType.ERROR);
+
+        }
+
 
     }
 
-    // navegacion entre ventanas
+
     public void navegarVentana(String nombreArchivoFxml, String tituloVentana) {
         try {
 
@@ -49,28 +77,6 @@ public class PanelClienteControlador implements Initializable {
         }
     }
 
-
-    public void cerrar(ActionEvent event) {
-        //cerrarVentana();
-        navegarVentana("/inicio.fxml", "Banco - Tranferir Dinero");
-
-
-    }
-
-    // cerrar una ventana
-
-    //public void cerrarVentana(){
-      //  Stage stage = (Stage) btnCerrar.getScene().getWindow();
-      //  stage.close();
-    // }
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
-    }
-
-
-    // creamos una alerta
     private void mostrarAlerta(String mensaje, Alert.AlertType tipo){
 
 
@@ -83,8 +89,14 @@ public class PanelClienteControlador implements Initializable {
 
     }
 
-    public void Editar(ActionEvent event){
-        navegarVentana("/Crud.fxml", "Banco - Tranferir Dinero");
+   // public void cerrarVentana(){
+     //   Stage stage = (Stage) btnCerrar.getScene().getWindow();
+       // stage.close();
+   // }
+
+    public void Editar (ActionEvent e){
+
+        navegarVentana("/Crud.fxml", "Hola");
 
     }
 

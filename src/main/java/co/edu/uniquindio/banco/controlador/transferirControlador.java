@@ -35,9 +35,6 @@ public class transferirControlador implements Initializable {
 
         try {
 
-
-
-
             banco.realizarTransferencia(txtNumeroCuenta.getText(), txtNumeroCuentaDestino.getText(), Float.parseFloat(txtCuenta.getText()), CategoriaTransaccion.valueOf(txtCategoria.getValue()));
 
             txtNumeroCuentaDestino.clear();
