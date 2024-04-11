@@ -97,6 +97,7 @@ public class EditarControlador {
     public void Editar (ActionEvent e){
 
         navegarVentana("/Crud.fxml", "Hola");
+        // holaaaa
 
     }
 
