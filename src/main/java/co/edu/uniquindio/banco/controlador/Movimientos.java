@@ -68,11 +68,13 @@ public class Movimientos implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        //no me recibe los getter y setter
         colMonto.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getMonto()));
         colCategoria.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getCategoria()));
         colUsuario.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getUsuario()));
         colFecha.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getFecha().toString()));
 
     }
+
+    //falta metodo Actualizar pagina 
 }
