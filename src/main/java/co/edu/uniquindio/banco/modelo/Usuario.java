@@ -11,7 +11,7 @@ import lombok.*;
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 
 public class Usuario {
-
+    private String hola;
     @EqualsAndHashCode.Include
     // encapsulamos los datos
     private final String numeroIdentificacion;
