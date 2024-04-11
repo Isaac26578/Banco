@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5a3bd3ce-1248-4794-ae78-07301b8e29dc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/controlador/controladorRegistro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/controlador/controladorRegistro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/controlador/loginControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/controlador/loginControlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/registro.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/registro.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +46,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.BancoApp.executor": "Run",
+    "Maven.demo [org.openjfx:javafx-maven-plugin:0.0.8:jlink].executor": "Run",
     "Maven.demo [org.openjfx:javafx-maven-plugin:0.0.8:run].executor": "Run",
     "Maven.notas [org.openjfx:javafx-maven-plugin:0.0.8:jlink].executor": "Run",
     "Maven.notas [org.openjfx:javafx-maven-plugin:0.0.8:run].executor": "Run",
@@ -53,7 +58,7 @@
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/57313/Desktop/co.edu.uniquindio/Banco - copia",
     "onboarding.tips.debug.path": "C:/Users/57313/Desktop/co.edu.uniquindio/Banco/src/main/java/org/example/Main.java",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.pluginManager"

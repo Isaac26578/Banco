@@ -8,23 +8,24 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class loginControlador {
 
     @FXML
-    private TextField txtNombreUser;
+    private TextField txtIdentificacion;
     @FXML
-    private TextField txtContrasena;
+    private PasswordField txtPassword;
     private final Banco banco = Banco.getInstancia();
 
-    public void login (ActionEvent e) throws Exception {
+    public void IniciarSesion (ActionEvent e) throws Exception {
         try {
         Usuario usuario;
         String nombre, contrasena;
-        nombre= txtNombreUser.getText();
-        contrasena = txtContrasena.getText();
+        nombre= txtIdentificacion.getText();
+        contrasena = txtPassword.getText();
         usuario= banco.validarUsuario(nombre, contrasena);
 
 

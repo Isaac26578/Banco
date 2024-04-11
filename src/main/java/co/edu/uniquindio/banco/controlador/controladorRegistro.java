@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -19,25 +20,25 @@ public class controladorRegistro {
     private TextField txtDireccion;
 
     @FXML
-    private TextField txtId;
+    private TextField txtIdentificacion;
 
     @FXML
     private TextField txtCorreo;
 
     @FXML
-    private TextField txtContra;
+    private PasswordField txtPassword;
 
     // variable global
     private final Banco banco = Banco.getInstancia();
 
 
     // metodo para agregar usuarios
-    public void agregarUsuarios(ActionEvent event){
+    public void registrarse(ActionEvent event){
         try{
 
-            banco.agregarUsuario(txtNombre.getText(), txtDireccion.getText(), txtId.getText(), txtCorreo.getText(), txtContra.getText());
+            banco.agregarUsuario(txtNombre.getText(), txtDireccion.getText(), txtIdentificacion.getText(), txtCorreo.getText(), txtPassword.getText());
 
-            banco.agregarCuentaAhorros(txtId.getText(), 0F);
+            banco.agregarCuentaAhorros(txtIdentificacion.getText(), 0F);
             crearAlerta("Usuario registrado correctamente", Alert.AlertType.INFORMATION);
 
             navegarVentana("/inicio.fxml", "Banco - Registro de Cliente");
@@ -106,7 +107,7 @@ public class controladorRegistro {
 
     // metodo para cerrar una ventana
     public void cerrarVentana(){
-        Stage stage = (Stage) txtId.getScene().getWindow();
+        Stage stage = (Stage) txtIdentificacion.getScene().getWindow();
         stage.close();
     }
 
