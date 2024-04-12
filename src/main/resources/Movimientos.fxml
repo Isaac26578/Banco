@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="center" prefHeight="650" prefWidth="600.0" spacing="10" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.banco.controlador.Movimientos">
+<VBox alignment="center" prefHeight="650" prefWidth="600.0" spacing="10" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.banco.controlador.MovimientosControlador">
 
     <Label text="Bienvenido a su historial de transacciones" textFill="#159e83">
         <font>
@@ -43,7 +43,6 @@
         <HBox alignment="CENTER" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
             <Button minHeight="40.0" minWidth="80.0" onAction="#cerrar" prefHeight="40.0" prefWidth="88.0" style="-fx-background-color: #f5ff6f;" text="Cerrar sesion" textFill="#159e83" />
         </HBox>
-        <Button minHeight="40.0" minWidth="74.0" onAction="#actualizar" prefHeight="40.0" prefWidth="88.0" style="-fx-background-color: #f5ff6f;" text="Actualizar" textFill="#159e83" GridPane.rowIndex="2" />
 
         <columnConstraints>
             <ColumnConstraints />

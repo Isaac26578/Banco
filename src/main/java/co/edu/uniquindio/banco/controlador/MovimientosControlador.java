@@ -1,5 +1,8 @@
 package co.edu.uniquindio.banco.controlador;
 
+import co.edu.uniquindio.banco.modelo.Transaccion;
+import javafx.beans.property.FloatProperty;
+import javafx.beans.property.SimpleFloatProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,22 +17,23 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class Movimientos implements Initializable {
+public class MovimientosControlador implements Initializable {
 
     @FXML
     private TextField txtNombre;
     @FXML
     private TextField txtNmrCuenta;
     @FXML
-    private TableView<Movimientos> tablaMovimientos;
+    private TableView<Transaccion> tablaMovimientos;
     @FXML
-    private TableColumn<String, Movimientos> colFecha;
+    private TableColumn<Transaccion, String> colFecha;
+
     @FXML
-    private TableColumn<String, Movimientos> colCategoria;
+    private TableColumn<Transaccion, String> colCategoria;
     @FXML
-    private TableColumn<String, Movimientos> colMonto;
+    private TableColumn<Transaccion, String> colMonto;
     @FXML
-    private TableColumn<String, Movimientos> colUsuario;
+    private TableColumn<Transaccion, String> colUsuario;
 
 
 
@@ -69,12 +73,11 @@ public class Movimientos implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //no me recibe los getter y setter
-        colMonto.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getMonto()));
-        colCategoria.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getCategoria()));
-        colUsuario.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getUsuario()));
+        colMonto.setCellValueFactory(cellData -> new SimpleStringProperty( ""+cellData.getValue().getMonto()) );
+        colCategoria.setCellValueFactory(cellData -> new SimpleStringProperty( cellData.getValue().getCategoria().toString() ));
+        colUsuario.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getUsuario().getNombre()));
         colFecha.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getFecha().toString()));
 
     }
-
-    //falta metodo Actualizar pagina 
 }
+
