@@ -1,6 +1,7 @@
 package co.edu.uniquindio.banco.controlador;
 
 import co.edu.uniquindio.banco.modelo.Banco;
+import co.edu.uniquindio.banco.modelo.Sesion;
 import co.edu.uniquindio.banco.modelo.Usuario;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -20,22 +21,26 @@ public class loginControlador {
     private PasswordField txtPassword;
     private final Banco banco = Banco.getInstancia();
 
+
+
     public void IniciarSesion (ActionEvent e) throws Exception {
         try {
+
         Usuario usuario;
         String nombre, contrasena;
         nombre= txtIdentificacion.getText();
         contrasena = txtPassword.getText();
         usuario= banco.validarUsuario(nombre, contrasena);
 
+        Sesion sesion = Sesion.getInstancia();
+        sesion.setUsuario(usuario);
 
-            if (usuario.getNumeroIdentificacion().equals(nombre)){
+        if (usuario.getNumeroIdentificacion().equals(nombre)){
 
                 // si el usuario existe dejelo entrar a la ventana principal
                 navegarVentana("/panel.fxml");
 
-
-            }
+        }
 
         } catch (Exception E){
 
@@ -71,8 +76,7 @@ public class loginControlador {
         }
     }
 
-
-    // metodo para mostrar un mensaje
+ // metodo para mostrar un mensaje
     private void mostrarAlerta(String mensaje, Alert.AlertType tipo){
 
 
