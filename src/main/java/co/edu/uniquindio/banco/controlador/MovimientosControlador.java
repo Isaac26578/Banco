@@ -53,7 +53,7 @@ public class MovimientosControlador implements Initializable {
             Stage stage = new Stage();
             stage.setScene(scene);
             stage.setResizable(false);
-            stage.setTitle("panel");
+            stage.setTitle(tituloVentana);
 
             // Mostrar la nueva ventana
             stage.show();
@@ -72,7 +72,7 @@ public class MovimientosControlador implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        //no me recibe los getter y setter
+
         colMonto.setCellValueFactory(cellData -> new SimpleStringProperty( ""+cellData.getValue().getMonto()) );
         colCategoria.setCellValueFactory(cellData -> new SimpleStringProperty( cellData.getValue().getCategoria().toString() ));
         colUsuario.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getUsuario().getNombre()));
