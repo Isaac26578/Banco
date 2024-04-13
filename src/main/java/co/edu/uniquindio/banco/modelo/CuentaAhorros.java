@@ -32,7 +32,6 @@ public class CuentaAhorros {
         this.transacciones = new ArrayList<>();
     }
 
-
     // metodo que realiza un deposito
 
     private void depositar(float cantidad, Usuario emisor, CategoriaTransaccion categoria) {
@@ -100,7 +99,5 @@ public class CuentaAhorros {
         }
         return transaccionesMes;
     }
-
-
 
 }  // ultimo

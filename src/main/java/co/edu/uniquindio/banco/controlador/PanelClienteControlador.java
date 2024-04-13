@@ -1,25 +1,37 @@
 package co.edu.uniquindio.banco.controlador;
 
+import co.edu.uniquindio.banco.modelo.*;
+import co.edu.uniquindio.banco.modelo.CuentaAhorros;
 import co.edu.uniquindio.banco.modelo.Banco;
+import co.edu.uniquindio.banco.modelo.Usuario;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class PanelClienteControlador implements Initializable {
 
+    private CuentaAhorros cuentaAhorros;
+    private final Banco banco = Banco.getInstancia();
 
+    @FXML
+    private Label lblSaldo;
+    @FXML
+    private String txtIdentificacion;
 
+    @FXML
+    private PasswordField txtPassword;
     // este boton me dirije a la view de transferir
+    private final Sesion sesion = Sesion.getInstancia();
+
     public void transferencia (ActionEvent e){
 
         navegarVentana("/Transferir.fxml", "Banco - Tranferir Dinero");
@@ -98,4 +110,15 @@ public class PanelClienteControlador implements Initializable {
     public void Consultar(ActionEvent event) {
 
     }
+
+    public void ConsultarSaldo() throws Exception {
+
+        float Saldo;
+
+        Usuario usuario = sesion.getUsuario();
+        Saldo = banco.ConsultarSaldo(usuario.getNumeroIdentificacion(), usuario.getContrasena());
+        mostrarAlerta("Su saldo es:"+Saldo,Alert.AlertType.INFORMATION);
+
+    }
+    
 }
