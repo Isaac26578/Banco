@@ -308,8 +308,24 @@ public class Banco {
         }
         return null;
     }
+    public Float ConsultarSaldo(String identificacion, String contrasena) throws Exception{
+        float saldo = 0;
+        Usuario usuario = validarUsuario(identificacion, contrasena);
 
+        if(usuario != null){
+            List<Float> cuentas = new ArrayList<>();
 
+            for(int i = 0; i < cuentasAhorros.size(); i++){
+                if(cuentasAhorros.get(i).getPropietario().getNumeroIdentificacion().equals(identificacion)){
+                    saldo= cuentasAhorros.get(i).getSaldo();
+                }
+            }
+
+            return saldo;
+        }
+
+        return null;
+    }
     // metodo para inicializar las categorias
     public ArrayList<String> listarCategorias() {
         ArrayList<String> categorias = new ArrayList<>();

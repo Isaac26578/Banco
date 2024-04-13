@@ -45,10 +45,40 @@ public class MovimientosControlador implements Initializable ,Observable {
 
     // Metodo para navegar entre ventanas
 
+<<<<<<< HEAD
+=======
+            // Cargar la vista
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(nombreArchivoFxml));
+            Parent root = loader.load();
+
+            // Crear la escena
+            Scene scene = new Scene(root);
+
+            // Crear un nuevo escenario (ventana)
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.setTitle(tituloVentana);
+
+            // Mostrar la nueva ventana
+            stage.show();
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    //Metodo para cerrar la ventana
+    public void cerrar(ActionEvent event) {
+        //cerrarVentana();
+        navegarVentana("/inicio.fxml", "Banco - Tranferir Dinero");
+
+    }
+>>>>>>> 43e1e7753a48fcecaa55bffb746b96ab2b7c6eec
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        //no me recibe los getter y setter
+
         colMonto.setCellValueFactory(cellData -> new SimpleStringProperty( ""+cellData.getValue().getMonto()) );
         colCategoria.setCellValueFactory(cellData -> new SimpleStringProperty( cellData.getValue().getCategoria().toString() ));
         colUsuario.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getUsuario().getNombre()));
