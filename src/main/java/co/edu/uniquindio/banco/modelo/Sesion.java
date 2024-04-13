@@ -10,11 +10,14 @@ public class Sesion {
     // creamos el singlenton
     public static Sesion INSTANCIA;
 
-    @Getter @Setter
+
+    @Getter
+    @Setter
 
     // encapsulamos los datos
 
     private Usuario usuario;
+    private CuentaAhorros cuenta;
 
     // constructor vacio y privado
 
@@ -33,8 +36,21 @@ public class Sesion {
 
     public void cerrarSesion() {
         usuario = null;
+        // variable nueva
+        cuenta= null;
+
     }
 
+
+    // metodo nuevo
+
+    public void setCuenta(CuentaAhorros cuenta) {
+        this.cuenta = cuenta;
+    }
+
+    public CuentaAhorros getCuenta() {
+        return cuenta;
+    }
 
 }
 

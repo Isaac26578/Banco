@@ -1,9 +1,7 @@
 package co.edu.uniquindio.banco.controlador;
 
-import co.edu.uniquindio.banco.modelo.Banco;
-import co.edu.uniquindio.banco.modelo.CuentaAhorros;
-import co.edu.uniquindio.banco.modelo.Sesion;
-import co.edu.uniquindio.banco.modelo.Usuario;
+import co.edu.uniquindio.banco.controlador.observador.Observable;
+import co.edu.uniquindio.banco.modelo.*;
 import co.edu.uniquindio.banco.modelo.enums.CategoriaTransaccion;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -11,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
 import java.net.URL;
@@ -19,7 +18,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 
-public class transferirControlador implements Initializable {
+public class transferirControlador implements Initializable{
 
 
     @FXML
@@ -33,7 +32,11 @@ public class transferirControlador implements Initializable {
 
     private final Banco banco = Banco.getInstancia();
 
+    private CuentaAhorros cuenta;
+
     private final Sesion sesion = Sesion.getInstancia();
+
+    private Observable observable;
 
     // metodo para tranferir una cuenta
     public void realizarTransferencia(ActionEvent event) throws Exception {
@@ -48,7 +51,7 @@ public class transferirControlador implements Initializable {
 
 
             banco.realizarTransferencia(cuentas.get(0).getNumeroCuenta(), txtCuenta.getText(), Float.parseFloat(txtMonto.getText()), CategoriaTransaccion.valueOf(txtCategoria.getValue()));
-
+            observable.notificar();
             txtCuenta.clear();
             txtMonto.clear();
             txtCategoria.setValue(null);
@@ -64,13 +67,6 @@ public class transferirControlador implements Initializable {
 
     }
 
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        txtCategoria.setItems( FXCollections.observableArrayList(banco.listarCategorias()));
-    }
-
-
     // Metodo para mostrar una alerta
     private void mostrarAlerta(String mensaje, Alert.AlertType tipo){
 
@@ -85,6 +81,18 @@ public class transferirControlador implements Initializable {
     }
 
 
-}
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        txtCategoria.setItems( FXCollections.observableArrayList(banco.listarCategorias()));
+
+    }
+
+
+    public void inicializarObservable(Observable observador) {
+        this.observable = observador;
+    }
+} // ultimo
 
 

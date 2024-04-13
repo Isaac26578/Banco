@@ -30,18 +30,19 @@
 
     </GridPane>
 
-    <TableView fx:id="tablaMovimientos">
+    <TableView fx:id="tablaMovimientos" prefHeight="400.0" prefWidth="714.0">
         <columns>
-            <TableColumn fx:id="colFecha" prefWidth="144.0" text="Fecha" />
-            <TableColumn fx:id="colCategoria" prefWidth="155.0" text="Categoria" />
-            <TableColumn fx:id="colMonto" prefWidth="133.0" text="Monto" />
-            <TableColumn fx:id="colUsuario" prefWidth="167.0" text="Destinatario" />
+            <TableColumn fx:id="colFecha" prefWidth="115.99999237060547" text="Fecha" />
+            <TableColumn fx:id="colCategoria" prefWidth="112.33332824707031" text="Categoria" />
+            <TableColumn fx:id="colMonto" prefWidth="127.0" text="Monto" />
+            <TableColumn fx:id="colUsuario" minWidth="0.0" prefWidth="122.33334350585938" text="Destinatario" />
+            <TableColumn fx:id="colTipo" prefWidth="121.00003051757812" text="Tipo transaccion" />
         </columns>
     </TableView>
 
     <GridPane alignment="CENTER" hgap="10" prefHeight="30.0" prefWidth="580.0" vgap="10.0">
         <HBox alignment="CENTER" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
-            <Button minHeight="40.0" minWidth="80.0" onAction="#cerrar" prefHeight="40.0" prefWidth="88.0" style="-fx-background-color: #f5ff6f;" text="Cerrar sesion" textFill="#159e83" />
+            <Button minHeight="40.0" minWidth="80.0" prefHeight="40.0" prefWidth="88.0" style="-fx-background-color: #f5ff6f;" text="Cerrar sesion" textFill="#159e83" />
         </HBox>
 
         <columnConstraints>

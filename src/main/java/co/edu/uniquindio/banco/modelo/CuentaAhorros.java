@@ -35,7 +35,7 @@ public class CuentaAhorros {
 
     // metodo que realiza un deposito
 
-    private void depositar(float cantidad, Usuario emisor, CategoriaTransaccion categoria) {
+    public void depositar(float cantidad, Usuario emisor, CategoriaTransaccion categoria) {
         // Se realiza el depósito
         saldo += cantidad;
 
@@ -101,6 +101,13 @@ public class CuentaAhorros {
         return transaccionesMes;
     }
 
+    public List<Transaccion> getTransacciones() {
+        return transacciones;
+    }
+
+
 
 
 }  // ultimo
+
+
