@@ -101,14 +101,15 @@ public class PanelClienteControlador implements Initializable {
     // este boton cuando le demos en editar me dijire a la viem del crud
     public void Editar(ActionEvent event) {
 
-        navegarVentana("/Crud.fxml", "Hola");
+        navegarVentana("/Crud.fxml", "Banco - Tranferir Dinero");
     }
 
 
-    // metodo para consultar
+    // metodo para cuando se le da el boton consultar nos leve a la ventana de movimientos
 
     public void Consultar(ActionEvent event) {
 
+        navegarVentana("/Movimientos.fxml", "Banco - Tranferir Dinero");
     }
 
     public void ConsultarSaldo() throws Exception {
