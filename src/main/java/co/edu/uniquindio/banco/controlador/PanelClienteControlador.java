@@ -1,26 +1,26 @@
 package co.edu.uniquindio.banco.controlador;
 
-<<<<<<< HEAD
+
 import co.edu.uniquindio.banco.controlador.observador.Observable;
 import co.edu.uniquindio.banco.modelo.Banco;
 import co.edu.uniquindio.banco.modelo.Transaccion;
-=======
+
 import co.edu.uniquindio.banco.modelo.*;
 import co.edu.uniquindio.banco.modelo.CuentaAhorros;
-import co.edu.uniquindio.banco.modelo.Banco;
 import co.edu.uniquindio.banco.modelo.Usuario;
->>>>>>> 43e1e7753a48fcecaa55bffb746b96ab2b7c6eec
+
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-<<<<<<< HEAD
+
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableView;
-=======
+
 import javafx.scene.control.*;
->>>>>>> 43e1e7753a48fcecaa55bffb746b96ab2b7c6eec
+
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -35,7 +35,7 @@ public class PanelClienteControlador implements Initializable, Observable {
     private final Banco banco = Banco.getInstancia();
 
     private CuentaAhorros cuentaAhorros;
-    private final Banco banco = Banco.getInstancia();
+
 
     @FXML
     private Label lblSaldo;
@@ -44,16 +44,18 @@ public class PanelClienteControlador implements Initializable, Observable {
 
     @FXML
     private PasswordField txtPassword;
-    // este boton me dirije a la view de transferir
-<<<<<<< HEAD
-    public void transferencia (ActionEvent e) throws IOException {
-=======
+
     private final Sesion sesion = Sesion.getInstancia();
 
-    public void transferencia (ActionEvent e){
+    // este boton me dirije a la view de transferir
+
+
+
+
+
+    public void transferencia (ActionEvent e) throws IOException {
 
         navegarVentana("/Transferir.fxml", "Banco - Tranferir Dinero");
->>>>>>> 43e1e7753a48fcecaa55bffb746b96ab2b7c6eec
 
         FXMLLoader loader =navegarVentana("/Transferir.fxml", "Banco - Tranferir Dinero");
         transferirControlador controlador = loader.getController();
@@ -123,11 +125,10 @@ public class PanelClienteControlador implements Initializable, Observable {
     // este boton cuando le demos en editar me dijire a la viem del crud
     public void Editar(ActionEvent event) {
 
-<<<<<<< HEAD
+
         navegarVentana2("/Crud.fxml", "Hola");
-=======
-        navegarVentana("/Crud.fxml", "Banco - Tranferir Dinero");
->>>>>>> 43e1e7753a48fcecaa55bffb746b96ab2b7c6eec
+
+
     }
 
 
@@ -173,7 +174,7 @@ public class PanelClienteControlador implements Initializable, Observable {
 
 
     @Override
-    public void notificar() {
+    public void notificar() throws IOException {
 
         navegarVentana("/Movimientos.fxml", "Banco - Tranferir Dinero");
     }

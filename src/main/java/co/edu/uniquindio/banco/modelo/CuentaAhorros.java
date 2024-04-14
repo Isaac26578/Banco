@@ -100,7 +100,7 @@ public class CuentaAhorros {
         return transaccionesMes;
     }
 
-<<<<<<< HEAD
+
     public List<Transaccion> getTransacciones() {
         return transacciones;
     }
@@ -108,8 +108,7 @@ public class CuentaAhorros {
 
 
 
-=======
->>>>>>> 43e1e7753a48fcecaa55bffb746b96ab2b7c6eec
+
 }  // ultimo
 
 

@@ -5,11 +5,16 @@ import co.edu.uniquindio.banco.controlador.observador.Observable;
 import co.edu.uniquindio.banco.modelo.*;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -44,9 +49,9 @@ public class MovimientosControlador implements Initializable ,Observable {
     private Observable observable;
 
     // Metodo para navegar entre ventanas
+    public void navegarVentana(String nombreArchivoFxml, String hola) {
+        try {
 
-<<<<<<< HEAD
-=======
             // Cargar la vista
             FXMLLoader loader = new FXMLLoader(getClass().getResource(nombreArchivoFxml));
             Parent root = loader.load();
@@ -58,7 +63,7 @@ public class MovimientosControlador implements Initializable ,Observable {
             Stage stage = new Stage();
             stage.setScene(scene);
             stage.setResizable(false);
-            stage.setTitle(tituloVentana);
+            stage.setTitle("");
 
             // Mostrar la nueva ventana
             stage.show();
@@ -68,13 +73,19 @@ public class MovimientosControlador implements Initializable ,Observable {
         }
     }
 
+
+
+
+
+
+
     //Metodo para cerrar la ventana
     public void cerrar(ActionEvent event) {
         //cerrarVentana();
         navegarVentana("/inicio.fxml", "Banco - Tranferir Dinero");
 
     }
->>>>>>> 43e1e7753a48fcecaa55bffb746b96ab2b7c6eec
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
