@@ -2,45 +2,57 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="center" prefHeight="277.0" prefWidth="588.0" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.banco.controlador.PanelClienteControlador">
+<VBox alignment="center" prefHeight="400.0" prefWidth="400.0" spacing="10.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.banco.controlador.PanelClienteControlador">
 
-   <Label text="Bienvenido a su banco de confianza" textFill="#159e83">
-      <font>
-         <Font size="18.0" />
-      </font>
-   </Label>
+    <Label text="Bienvenido a su panel de control" textFill="#159e83">
+        <font>
+            <Font name="System Bold" size="18.0" />
+        </font>
+    </Label>
+    <HBox alignment="CENTER" spacing="5">
+        <Label fx:id="lblSaldo" />
+    </HBox>
 
-   <GridPane alignment="CENTER" hgap="10" vgap="10.0">
-      <Label text="Hola, pepito " GridPane.rowIndex="1" />
-      <Label text="Nmr. de cuenta" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+    <ImageView fitHeight="167.0" fitWidth="188.0" pickOnBounds="true" preserveRatio="true">
+        <image>
+            <Image url="@img/LogoBanco.png" />
+        </image>
+    </ImageView>
+    <HBox alignment="CENTER" prefHeight="40.0" prefWidth="230.0" spacing="20.0">
+        <children>
+            <Button minHeight="40.0" minWidth="74.0" onAction="#ConsultarSaldo" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #f5ff6f;" text="Saldo" textFill="#159e83">
+                <font>
+                    <Font size="14.0" />
+                </font></Button>
 
+            <Button minHeight="40.0" minWidth="74.0" onAction="#transferencia" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #f5ff6f;" text="Transferir" textFill="#159e83">
+                <font>
+                    <Font size="14.0" />
+                </font></Button>
 
-
-      <HBox alignment="CENTER" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
-         <Button minHeight="40.0" minWidth="80.0" onAction="#cerrar" prefHeight="40.0" prefWidth="88.0" style="-fx-background-color: #f5ff6f;" text="Cerrar sesion" textFill="#159e83" />
-         <Button minHeight="40.0" minWidth="74.0" onAction="#Consultar" prefHeight="40.0" prefWidth="88.0" style="-fx-background-color: #f5ff6f;" text="Movimientos" textFill="#159e83" />
-         <Button minHeight="40.0" minWidth="74.0" onAction="#ConsultarSaldo" prefHeight="40.0" prefWidth="88.0" style="-fx-background-color: #f5ff6f;" text="Saldo" textFill="#159e83" />
-         <Button minHeight="40.0" minWidth="75.0" onAction="#Editar" prefHeight="40.0" prefWidth="89.0" style="-fx-background-color: #f5ff6f;" text="Editar perfil" textFill="#159e83" />
-      </HBox>
-      <Button minHeight="40.0" minWidth="74.0" onAction="#transferencia" prefHeight="40.0" prefWidth="88.0" style="-fx-background-color: #f5ff6f;" text="Transferir" textFill="#159e83" GridPane.rowIndex="4" />
-
-      <columnConstraints>
-         <ColumnConstraints />
-         <ColumnConstraints />
-      </columnConstraints>
-      <rowConstraints>
-         <RowConstraints />
-         <RowConstraints />
-         <RowConstraints />
-         <RowConstraints />
-         <RowConstraints />
-      </rowConstraints>
-   </GridPane>
+            <Button minHeight="40.0" minWidth="74.0" onAction="#Consultar" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #f5ff6f;" text="Movimientos" textFill="#159e83">
+                <font>
+                    <Font name="Candara" size="14.0" />
+                </font>
+            </Button>
+        </children>
+    </HBox>
+    <HBox alignment="CENTER" prefHeight="40.0" prefWidth="230.0" spacing="20.0">
+        <children>
+            <Button minHeight="40.0" minWidth="80.0" onAction="#cerrar" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #f5ff6f;" text="Cerrar sesion" textFill="#159e83">
+                <font>
+                    <Font size="14.0" />
+                </font></Button>
+            <Button minHeight="40.0" minWidth="75.0" onAction="#Editar" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #f5ff6f;" text="Editar perfil" textFill="#159e83">
+                <font>
+                    <Font name="Candara" size="14.0" />
+                </font></Button>
+        </children>
+    </HBox>
 </VBox>

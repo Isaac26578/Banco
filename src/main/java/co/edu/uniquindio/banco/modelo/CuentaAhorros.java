@@ -38,6 +38,7 @@ public class CuentaAhorros {
         // Se realiza el depósito
         saldo += cantidad;
 
+
         // Se crea la transacción de depósito
         Transaccion transaccion = Transaccion.builder()
                 .tipo(TipoTransaccion.DEPOSITO)

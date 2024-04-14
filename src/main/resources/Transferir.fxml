@@ -14,7 +14,7 @@
 
    <Label text="Realizar Transferencia" textFill="#159e83">
       <font>
-         <Font name="Candara" size="18.0" />
+         <Font name="Candara Bold" size="18.0" />
       </font>
    </Label>
 
@@ -33,7 +33,7 @@
          <font>
             <Font size="14.0" />
          </font></Label>
-      <ComboBox fx:id="txtCategoria" minHeight="30.0" prefHeight="30.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <ComboBox fx:id="txtCategoria" minHeight="30.0" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #159e83;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
       <columnConstraints>
          <ColumnConstraints />
          <ColumnConstraints />
