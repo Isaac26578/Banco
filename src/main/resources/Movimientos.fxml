@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox alignment="center" prefHeight="650" prefWidth="600.0" spacing="10" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.banco.controlador.MovimientosControlador">
+<VBox alignment="center" prefHeight="397.0" prefWidth="400.0" spacing="10" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.banco.controlador.MovimientosControlador">
 
     <Label text="Bienvenido a su historial de transacciones" textFill="#159e83">
         <font>
@@ -27,13 +34,13 @@
 
     </GridPane>
 
-    <TableView fx:id="tablaMovimientos" prefHeight="400.0" prefWidth="714.0">
+    <TableView fx:id="tablaMovimientos" prefHeight="200.0" prefWidth="385.0">
         <columns>
-            <TableColumn fx:id="colFecha" prefWidth="115.99999237060547" text="Fecha" />
-            <TableColumn fx:id="colCategoria" prefWidth="112.33332824707031" text="Categoria" />
-            <TableColumn fx:id="colMonto" prefWidth="127.0" text="Monto" />
-            <TableColumn fx:id="colUsuario" minWidth="0.0" prefWidth="122.33334350585938" text="Destinatario" />
-            <TableColumn fx:id="colTipo" prefWidth="121.00003051757812" text="Tipo transaccion" />
+            <TableColumn fx:id="colFecha" prefWidth="82.4000244140625" text="Fecha" />
+            <TableColumn fx:id="colCategoria" prefWidth="65.5999755859375" text="Categoría" />
+            <TableColumn fx:id="colMonto" prefWidth="64.79998779296875" text="Monto" />
+            <TableColumn fx:id="colUsuario" minWidth="0.0" prefWidth="76.0" text="Destinatario" />
+            <TableColumn fx:id="colTipo" prefWidth="116.79998779296875" text="Tipo transaccion" />
         </columns>
     </TableView>
 

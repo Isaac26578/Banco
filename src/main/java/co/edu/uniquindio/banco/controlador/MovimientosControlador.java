@@ -117,7 +117,7 @@ public class MovimientosControlador implements Initializable{
 
     public void cerrar(ActionEvent event) throws IOException {
 
-        navegarVentana("/panel.fxml","Inicio");
+        navegarVentana("/inicio.fxml","Inicio");
 
     }
 

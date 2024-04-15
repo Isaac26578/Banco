@@ -1,0 +1,21 @@
+INTEGRANTES:
+
+    Isaac Torres 1010081342
+    Mariana Ramirez 1047396122
+    Jason Torres 1193091732
+
+INVESTIGACIÓN
+
+1.  Investigue ¿qué es un MenuButton? y ¿qué ventajas tiene?
+2.  ¿Qué hace la etiqueta Region en un HBox o un VBox?
+
+SOLUCIÓN
+
+1. MenuButton sirve para colocar un menu con varias opciones dentro de un panel y de ventaja nos
+   ayuda a optimizar la cantidad de botones y o espacio.
+
+2. Region en un HBox o un VBox se ultilizan principalmente para poder tener el panel mas flexibes
+   y nos permita salirnos de los limites de los VBox y HBox
+
+3. Por ultimo nosotros implementamos el VBox y HBox en el trabajo
+
