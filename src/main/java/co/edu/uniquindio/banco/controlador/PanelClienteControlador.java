@@ -103,7 +103,7 @@ public class PanelClienteControlador implements Initializable {
     // este boton cuando le demos en editar me dijire a la viem del crud
     public void Editar(ActionEvent event) throws IOException {
         navegarVentana("/Crud.fxml", "Hola");
-        cerrarVentana();
+
 
     }
     // metodo para cuando se le da el boton consultar nos leve a la ventana de movimientos
@@ -111,7 +111,6 @@ public class PanelClienteControlador implements Initializable {
     public void Consultar(ActionEvent event) throws IOException {
 
         navegarVentana("/Movimientos.fxml", "Hola");
-        cerrarVentana();
     }
 
     public void ConsultarSaldo() throws Exception {
