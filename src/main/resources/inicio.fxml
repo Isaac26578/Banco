@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox alignment="center" prefHeight="400.0" prefWidth="400.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.banco.controlador.InicioControlador">
+<VBox alignment="center" prefHeight="400.0" prefWidth="400.0" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.banco.controlador.InicioControlador">
 
-    <Label text="Bienvenido al Banco IMJ" textFill="#151616">
+    <Label text="Bienvenido al Banco IMJ" textFill="#159e83">
         <font>
-            <Font name="Arial Bold Italic" size="18.0" />
+            <Font name="Candara Bold" size="18.0" />
         </font>
     </Label>
 
@@ -26,8 +29,14 @@
     </Label>
 
     <HBox alignment="CENTER" spacing="20.0">
-        <Button minHeight="40.0" minWidth="130.0" onAction="#irIniciarSesion" style="-fx-background-color: #00807a; -fx-text-fill: white" text="Iniciar sesión" />
-        <Button minHeight="40.0" minWidth="130.0" onAction="#irRegistroCliente" style="-fx-background-color: #00807a; -fx-text-fill: white" text="Registrarse" />
+        <Button minHeight="40.0" minWidth="130.0" onAction="#irIniciarSesion" style="-fx-background-color: #159e83;" text="Iniciar sesión" textFill="#f5ff6f">
+            <font>
+                <Font name="Candara" size="14.0" />
+            </font></Button>
+        <Button minHeight="40.0" minWidth="130.0" onAction="#irRegistroCliente" style="-fx-background-color: #159e83;" text="Registrarse" textFill="#f5ff6f">
+            <font>
+                <Font name="Candara" size="14.0" />
+            </font></Button>
     </HBox>
 
 </VBox>

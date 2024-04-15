@@ -44,8 +44,9 @@ public class Sesion {
 
     // metodo nuevo
 
-    public void setCuenta(CuentaAhorros cuenta) {
+    public String setCuenta(CuentaAhorros cuenta) {
         this.cuenta = cuenta;
+        return null;
     }
 
     public CuentaAhorros getCuenta() {

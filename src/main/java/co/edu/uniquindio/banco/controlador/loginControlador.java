@@ -20,13 +20,13 @@ public class loginControlador {
     @FXML
     private PasswordField txtPassword;
     private final Banco banco = Banco.getInstancia();
-
-
+    private final Sesion sesion = Sesion.getInstancia();
 
     public void IniciarSesion (ActionEvent e) throws Exception {
         try {
 
-        Usuario usuario;
+        Usuario usuario = sesion.getUsuario();
+        sesion.setUsuario(usuario);
         String nombre, contrasena;
         nombre= txtIdentificacion.getText();
         contrasena = txtPassword.getText();
@@ -39,6 +39,7 @@ public class loginControlador {
 
                 // si el usuario existe dejelo entrar a la ventana principal
                 navegarVentana("/panel.fxml");
+                cerrarVentana();
 
         }
 
@@ -88,5 +89,14 @@ public class loginControlador {
 
 
     }
+
+
+    // metodo para cerrar una ventana
+    public void cerrarVentana(){
+        Stage stage = (Stage) txtIdentificacion.getScene().getWindow();
+        stage.close();
+    }
+
+
 
 }

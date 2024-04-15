@@ -1,30 +1,28 @@
 package co.edu.uniquindio.banco.controlador;
 
-
 import co.edu.uniquindio.banco.controlador.observador.Observable;
 import co.edu.uniquindio.banco.modelo.*;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class MovimientosControlador implements Initializable ,Observable {
+public class MovimientosControlador implements Initializable{
 
-    @FXML
-    private TextField txtNombre;
-    @FXML
-    private TextField txtNmrCuenta;
     @FXML
     private TableColumn<Transaccion, String> colFecha;
     @FXML
@@ -35,128 +33,109 @@ public class MovimientosControlador implements Initializable ,Observable {
     private TableColumn<Transaccion, String> colUsuario;
     @FXML
     private TableColumn<Transaccion, String> colCategoria;
-
-
     @FXML
-    TableView<Transaccion> tablaMovientos;
-
+    private Label lblCuenta;
+    @FXML
+    private Label lblNombre;
+    @FXML
+    private  TableView<Transaccion> tablaMovimientos;
     private String numeroCuentaOrigen;
-
     private final Banco banco = Banco.getInstancia();
     private final Sesion sesion = Sesion.getInstancia();
-
     private CuentaAhorros cuenta;
-    private Observable observable;
-
-    // Metodo para navegar entre ventanas
-    public void navegarVentana(String nombreArchivoFxml, String hola) {
-        try {
-
-            // Cargar la vista
-            FXMLLoader loader = new FXMLLoader(getClass().getResource(nombreArchivoFxml));
-            Parent root = loader.load();
-
-            // Crear la escena
-            Scene scene = new Scene(root);
-
-            // Crear un nuevo escenario (ventana)
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.setResizable(false);
-            stage.setTitle("");
-
-            // Mostrar la nueva ventana
-            stage.show();
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }
-
-
-
-
-
-
-
-    //Metodo para cerrar la ventana
-    public void cerrar(ActionEvent event) {
-        //cerrarVentana();
-        navegarVentana("/inicio.fxml", "Banco - Tranferir Dinero");
-
-    }
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+        Usuario us = sesion.getUsuario();
+        inicializarValoresCuenta(us);
+        tablaMovimientos.setItems(FXCollections.observableArrayList(cuenta.getTransacciones()));
+        inicializarValores();
+
+        colTipo.setCellValueFactory(cellData -> new SimpleStringProperty( cellData.getValue().getTipo().toString()));
         colMonto.setCellValueFactory(cellData -> new SimpleStringProperty( ""+cellData.getValue().getMonto()) );
-        colCategoria.setCellValueFactory(cellData -> new SimpleStringProperty( cellData.getValue().getCategoria().toString() ));
         colUsuario.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getUsuario().getNombre()));
         colFecha.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getFecha().toString()));
-        colTipo.setCellValueFactory(cellData -> new SimpleStringProperty( cellData.getValue().getTipo().toString()));
+        colCategoria.setCellValueFactory(cellData -> new SimpleStringProperty( cellData.getValue().getCategoria().toString() ));
 
     }
 
-
-
-
-
-
-
-
     // metodo para obtener la cuenta de ahorros del usuario
-    public void obtenerCuenta (Usuario us ){
+    public void inicializarValoresCuenta (Usuario us ){
 
         // lanzamos una exepcion
 
         try {
 
             if(us != null){
-                sesion.getCuenta().getNumeroCuenta();
                 cuenta= banco.consultarCuentasUsario(us.getNumeroIdentificacion());
                 sesion.setCuenta(cuenta);
-                consultarTransacciones ();
 
             }
 
         } catch (Exception ex){
 
+            mostrarAlerta("la tabla esta vacia", Alert.AlertType.INFORMATION);
 
         }
 
     }
 
-
-
     // metodo para consultar las transacciones
-    public  void consultarTransacciones (){
+    private void mostrarAlerta(String mensaje, Alert.AlertType tipo){
 
-        tablaMovientos.setItems(FXCollections.observableArrayList(cuenta.getTransacciones()));
-    }
-
-
-    public void inicializarValores(String numeroCuentaorigen ,TableView<Transaccion> tablaMovientos){
-        this.tablaMovientos = tablaMovientos;
-        this.numeroCuentaOrigen = numeroCuentaorigen;
-
+        Alert alert = new Alert(tipo);
+        alert.setTitle("Información");
+        alert.setHeaderText(null);
+        alert.setContentText(mensaje);
+        alert.show();
 
     }
 
+    public void inicializarValores(){
+        String resultadoConsulta;
 
-    // nuevo
-    @Override
-    public void notificar() {
-        consultarTransacciones ();
+        Usuario usuario = sesion.getUsuario();
+        resultadoConsulta = banco.ConsultarNombre(usuario.getNumeroIdentificacion(), usuario.getContrasena());
+        lblCuenta.setText(resultadoConsulta);
+    }
+
+    public void cerrar(ActionEvent event) throws IOException {
+
+        navegarVentana("/panel.fxml","Inicio");
+        cerrarVentana();
 
     }
 
-    public void inicializarObservable(Observable observador) {
-        this.observable = observador;
+    // cerrar ventana de movimientos
+    public FXMLLoader navegarVentana(String nombreArchivoFxml, String tituloVentana) throws IOException {
+
+
+        // Cargar la vista
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(nombreArchivoFxml));
+        Parent root = loader.load();
+
+        // Crear la escena
+        Scene scene = new Scene(root);
+
+        // Crear un nuevo escenario (ventana)
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.setTitle("panel");
+
+        // Mostrar la nueva ventana
+        stage.show();
+        return loader;
+
     }
 
-
-
-
+    // metodo para cerrar ventana
+    public void cerrarVentana(){
+        Stage stage = (Stage) lblNombre.getScene().getWindow();
+        stage.close();
+    }
 }
+
 

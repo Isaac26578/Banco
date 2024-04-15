@@ -1,6 +1,8 @@
 package co.edu.uniquindio.banco.controlador;
 
 import co.edu.uniquindio.banco.modelo.Banco;
+import co.edu.uniquindio.banco.modelo.Sesion;
+import co.edu.uniquindio.banco.modelo.Usuario;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,32 +16,30 @@ import javafx.stage.Stage;
 public class EditarControlador {
     @FXML
     private TextField txtNombre;
-
     @FXML
     private TextField txtDireccion;
-
     @FXML
     private TextField txtIdentificacion;
-
     @FXML
     private TextField txtCorreo;
-
     @FXML
     private PasswordField txtPassword;
-
     // variable global
     private final Banco banco = Banco.getInstancia();
-
+    private final Sesion sesion = Sesion.getInstancia();
 
     // metodo para agregar usuarios
     public void Actualizar(ActionEvent event){
         try{
+            Usuario user;
+
+           user=  sesion.getUsuario();
 
             banco.actualizarUsuario(txtNombre.getText(), txtDireccion.getText(), txtIdentificacion.getText(), txtCorreo.getText(), txtPassword.getText());
 
 
             mostrarAlerta("Datos Actualizados correctamente", Alert.AlertType.INFORMATION);
-
+            cerrarVentana();
 
             //cerrarVentana();
 
@@ -48,7 +48,6 @@ public class EditarControlador {
             mostrarAlerta(e.getMessage(), Alert.AlertType.ERROR);
 
         }
-
 
     }
 
@@ -89,12 +88,9 @@ public class EditarControlador {
 
     }
 
-   // public void cerrarVentana(){
-     //   Stage stage = (Stage) btnCerrar.getScene().getWindow();
-       // stage.close();
-   // }
-
-
-
+    public void cerrarVentana(){
+        Stage stage = (Stage) txtNombre.getScene().getWindow();
+        stage.close();
+    }
 
 }

@@ -7,5 +7,7 @@ public interface Observable {
 
 
     // metodo notificar
-    public void notificar() throws IOException;
+      public void notificar();
+
+
 }

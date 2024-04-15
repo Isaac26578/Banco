@@ -15,6 +15,7 @@ public class InicioControlador  {
      */
     public void irIniciarSesion(ActionEvent actionEvent) {
         navegarVentana("/login.fxml", "Banco - Iniciar Sesión");
+
     }
 
     /**

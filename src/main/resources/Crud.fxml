@@ -8,30 +8,30 @@
 
     <Label text="Editar Perfil" textFill="#159e83">
         <font>
-            <Font name="Candara" size="18.0" />
+            <Font name="Candara Bold" size="18.0" />
         </font>
     </Label>
 
     <GridPane alignment="CENTER" hgap="10.0" vgap="10.0">
-        <Label text="Nombre" GridPane.columnIndex="0" GridPane.rowIndex="0">
+        <Label text="Nro identificacion actual" GridPane.columnIndex="0" GridPane.rowIndex="0">
             <font>
-                <Font size="14.0" />
+                <Font name="Candara" size="14.0" />
             </font></Label>
         <TextField fx:id="txtIdentificacion" minHeight="30.0" promptText="Ej: Juan" GridPane.columnIndex="1" GridPane.rowIndex="0" />
 
-        <Label text="Dirección" GridPane.columnIndex="0" GridPane.rowIndex="1">
+        <Label text="Nro de identificacion nuevo" GridPane.columnIndex="0" GridPane.rowIndex="1">
             <font>
                 <Font name="Candara" size="14.0" />
             </font></Label>
         <TextField fx:id="txtNombre" minHeight="30.0" promptText="Ej: manzana f casa 2" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
-        <Label text="Numero Identificacion" GridPane.columnIndex="0" GridPane.rowIndex="2">
+        <Label text="Correo" GridPane.columnIndex="0" GridPane.rowIndex="2">
             <font>
                 <Font size="14.0" />
             </font></Label>
         <TextField fx:id="txtCorreo" minHeight="30.0" promptText="Ej: 19982" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
-        <Label text="Correo" GridPane.columnIndex="0" GridPane.rowIndex="3">
+        <Label text="Nombre" GridPane.columnIndex="0" GridPane.rowIndex="3">
             <font>
                 <Font size="14.0" />
             </font></Label>

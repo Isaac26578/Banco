@@ -369,6 +369,17 @@ public class Banco {
         throw new Exception("Los datos de acceso son incorrectos");
     }
 
+    public String ConsultarNombre(String identificacion, String contrasena){
+        String resultadoConsulta = null;
+        for(int i = 0; i < cuentasAhorros.size(); i++){
+            if(cuentasAhorros.get(i).getPropietario().getNumeroIdentificacion().equals(identificacion)){
+                for(Usuario usuarios : usuarios){
+                    resultadoConsulta =" su número de cuenta es "+cuentasAhorros.get(i).getNumeroCuenta();
+                }
+            }
+        }
 
+        return resultadoConsulta;
+    }
 
 }
